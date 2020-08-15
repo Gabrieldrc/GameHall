@@ -1,0 +1,30 @@
+Tipos de letras:
+
+Parrafos:
+  Recursive:
+    Regular 400
+    Semi-bold 600
+    Bold 700
+
+    <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@400;600;700&display=swap" rel="stylesheet">
+
+    Css rule to specify families:
+      font-family: 'Recursive', sans-serif;
+    
+  Raleway:
+    Regular 400
+    Semi-bold 600
+    Bold 700
+
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+
+    CSS rules to specify families:
+      font-family: 'Raleway', sans-serif;
+
+  Dancing Script:
+    Regular 400
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    
+    CSS rules to specify families:
+      font-family: 'Dancing Script', cursive;

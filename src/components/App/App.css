@@ -1,0 +1,9 @@
+.App {
+    width: 1400px;
+    margin: auto;
+    padding-top: 5rem;
+}
+
+.bodyContainer {
+    background-color: darkgreen;
+}
