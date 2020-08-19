@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Nav from '../Nav/Nav';
 import TictactoeContainer from '../TictactoeContainer/TictactoeContainer';
+import HangmanContainer from '../HangmanContainer/HangmanContainer';
 
 
 class App extends React.Component {
@@ -11,6 +12,7 @@ class App extends React.Component {
         <Nav />
         <div className="App">
           <TictactoeContainer />
+          <HangmanContainer />
         </div>
       </div>
     );

@@ -1,25 +1,29 @@
 import React from 'react';
 import TictactoeComponent from './TictactoeComponent/TictactoeComponent';
 import Tictactoe from '../../games/Tictactoe';
+import Buttom from '../Buttom/Buttom';
 
 const TictactoeContainerStyle = {
-  padding: "1rem",
+  padding: "5rem 1rem",
+  display: "grid",
+  gridTemplateColumns: "70% 30%",
 };
 
-const newGameButtom = {
-  backgroundColor: "mediumslateblue",  
-  color: "white",
-  padding: "0.2rem 0.5rem",
-  cursor: "pointer",
-  width: "fit-content",
-  borderRadius: "5rem",
-  fontSize: "1.5rem",
+const instructionsStyle = {
+  backgroundColor: "mediumpurple",
+  border: "5px solid black",
+  textAlign: "justified",
+  padding: "1rem",
+  color: "papayawhip",
+};
+
+const pInstructionsStyle = {
+  margin: "1rem",
 };
 
 const turnContainer = {
   margin: "auto",
   width: "700px",
-//   backgroundColor: "white",
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center", 
@@ -73,7 +77,7 @@ class TictactoeContainer extends React.Component {
 
   gameOver() {
     if (!this.tictactoeGame.gameOver()) {
-      return <div style={middleTitleStyle}><h1>Tictactoe</h1></div>;
+      return <div style={middleTitleStyle}><h1>Tic-tac-toe</h1></div>;
     }
     if (!this.tictactoeGame.wonX() && !this.tictactoeGame.wonO()) {
       return <div style={middleTitleStyle}><h1>GAME OVER!</h1></div>;
@@ -89,17 +93,30 @@ class TictactoeContainer extends React.Component {
   render() {
     return(
       <div style={TictactoeContainerStyle} id="tictactoe">
-        <div style={turnContainer}>
-          <div style={newGameButtom} onClick={() => this.newTictactoeGame()}>New Game</div>
-          {this.gameOver()}
-          <div>
-            <h1 style={turnStyle}>TURN: </h1>
-            {(this.tictactoeGame.getTurn() === 'X')? <h1 style={xStyle}>X</h1>:<h1 style={oStyle}>O</h1>}
+        <div>
+          <div style={turnContainer}>
+            <Buttom funct={() => this.newTictactoeGame()} value="New Game" backgroundColor="mediumslateblue"/>
+            {this.gameOver()}
+            <div>
+              <h1 style={turnStyle}>TURN: </h1>
+              {(this.tictactoeGame.getTurn() === 'X')? <h1 style={xStyle}>X</h1>:<h1 style={oStyle}>O</h1>}
+            </div>
           </div>
+          <TictactoeComponent 
+            board={this.state.board}
+            playOnGrid={this.playOnGrid}/>
         </div>
-        <TictactoeComponent 
-          board={this.state.board}
-          playOnGrid={this.playOnGrid}/>
+        <div className="instructions" style={instructionsStyle}>
+          <h1 style={pInstructionsStyle}>Tic-tac-toe</h1>
+          <p style={pInstructionsStyle}>
+            "Tic-tac-toe" is a game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The winner is the player who succeeds in placing three of their marks in:
+          </p>
+          <ul>
+            <li>a horizontal row</li>
+            <li>a vertical row</li>
+            <li>a diagonal row</li>
+          </ul>
+        </div>
       </div>
     );
   }
