@@ -2,7 +2,7 @@ import React from 'react';
 
 class Buttom extends React.Component {
   render() {
-    const {funct, value, color, backgroundColor, margin, display} = this.props;
+    const {funct, value, color, backgroundColor, margin, display, fontSize} = this.props;
     const buttomStyle = {
       backgroundColor: backgroundColor? backgroundColor : "black",  
       color: color? color : "white",
@@ -10,7 +10,7 @@ class Buttom extends React.Component {
       cursor: "pointer",
       width: "fit-content",
       borderRadius: "5rem",
-      fontSize: "1.5rem",
+      fontSize: fontSize? fontSize : "1.5rem",
     };
     if (margin) {
       buttomStyle.margin = margin;

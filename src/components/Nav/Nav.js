@@ -9,7 +9,7 @@ const styleNav = {
 };
 
 const styleContainer = {
-  width: "1000px",
+  width: "1200px",
   margin: "0rem auto",
 };
 
@@ -38,6 +38,7 @@ class Nav extends React.Component {
             {items.map(item => {
               return <NavLink key={item}>{item}</NavLink>;
             })}
+          <a href="https://github.com/Gabrieldrc/GameHall" target="_blank"><img src="./img/githubLogo.png" alt="github repository" key="githubLogo" title="github repository"></img></a>
           </div>
         </div>
       </div>

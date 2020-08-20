@@ -154,8 +154,8 @@ class HangmanContainer extends React.Component {
           </p>
           <p style={pInstructionsStyle}>You have two options how to play:</p>
           <ul>
-            <li>Agaisnt the computer</li>
-            <li>Agaisnt a friend</li>
+            <li>Against the computer</li>
+            <li>Against a friend</li>
           </ul>
         </div>
         {this.gameStatus()}

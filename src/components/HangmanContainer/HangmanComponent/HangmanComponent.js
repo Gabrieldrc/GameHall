@@ -33,7 +33,12 @@ class HangmanComponent extends React.Component {
     let backgroundColor = "red";
     return abcList.map(letter => {
       backgroundColor === "red"? backgroundColor = "black": backgroundColor = "red";
-      return <Buttom key={letter} value={letter} funct={() => this.props.playALetter(letter)} display="inline-block" backgroundColor={backgroundColor}/>
+      return <Buttom key={letter} value={letter} display="inline-block" 
+        backgroundColor={backgroundColor}
+        funct={event => {
+          event.target.style.backgroundColor = "mediumblue";
+          this.props.playALetter(letter);
+        }}/>
     });
   }
 
