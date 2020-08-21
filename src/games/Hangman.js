@@ -5,11 +5,14 @@ class Hangman {
   _lettersPlayed = [];
   _lives = 6;
   setWord(word) {
-    if (this._word === "") {
-      this._word = word;
-      return true;
+    if (this._word !== "") {
+      return false;
     }
-    return false;
+    if ( word.match(/[^A-Za-z]/g)) {
+      return false;
+    }
+    this._word = word.toLowerCase();
+    return true;
   }
 
   showUnderscores() {

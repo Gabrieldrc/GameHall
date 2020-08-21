@@ -133,3 +133,9 @@ test('playALetter returns false if gameOver is true', () => {
     game.playALetter("d");
     expect(game.playALetter("x")).toBeFalsy();
 });
+
+test('setWord and returns false if recieve numbers or special characters', () => {
+    expect(game.setWord("1234asdsdf")).toBeFalsy();
+    expect(game.setWord("asdsdf")).toBeTruthy();
+    expect(game.setWord("asds&#df")).toBeFalsy();
+});

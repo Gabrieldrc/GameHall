@@ -86,7 +86,8 @@ class HangmanContainer extends React.Component {
       return (
         <div style={gameModeSelectionStyle}>
           <h1>Write a word</h1>
-          <input type="password" onChange={event => this.inputTheWord(event.target.value)}/>
+          <input type="password" id="inputSecretWord" onChange={event => this.inputTheWord(event.target.value)}/>
+          <label id="inputSecretWord" ></label>
           <Buttom key="submitWord" funct={() => this.setTheWord()} value value="submit" margin="2rem auto"/>
         </div>
       );
@@ -119,6 +120,8 @@ class HangmanContainer extends React.Component {
         underscoreWord: this.hangmanGame.showUnderscores(),
         lives: this.hangmanGame.getLives()
       });
+    } else {
+      alert("Submit a word without spaces, numbers or special characters");
     }
   }
 
